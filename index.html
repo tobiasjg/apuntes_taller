@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apunte Git y GitHub</title>
+
+    <style>
+        body {
+            background-color: rgba(224, 203, 97, 0.893);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        button {
+            margin: 3px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        button:hover {
+            background-color: brown;
+            color: white;
+        }
+
+        img {
+            border-radius: 20px;
+            margin: 3px;
+        }
+
+        #inicio {
+            display: flex;
+            justify-content: center;
+        }
+
+        #git,
+        #github {
+            display: none;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        table td:first-child {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <button id="btn_inicio">Inicio</button>
+            <button id="btn_git">Git</button>
+            <button id="btn_github">GitHub</button>
+        </nav>
+    </header>
+
+    <section id="inicio">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD3_SgO5BK_Em26-wRm3VlZ27W0FB8z1uPkw&s"
+            alt="Logo de Git" width="150">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-fpBi8y4AgyGZT39KeXOnzIsvo8CQvfK7jQ&s"
+            alt="Logo de GitHub" width="150">
+
+    </section>
+
+    <section id="git">
+
+        <h1>Git</h1>
+
+        <p>
+            Git es un <strong>sistema de control de versiones distribuido</strong>.
+            Sirve para rastrear todos los cambios que se realizan en el código de un proyecto,
+            permitiendo guardar el historial de modificaciones, recuperar versiones anteriores
+            y colaborar en equipo sin perder información ni sobreescribir el trabajo de otros.
+        </p>
+
+        <h2>¿Por qué es tan útil usar Git?</h2>
+
+        <ul>
+            <li>
+                <strong>Historial completo:</strong>
+                Funciona como una máquina del tiempo. Puedes ver exactamente qué se modificó,
+                quién lo hizo y cuándo.
+            </li>
+
+            <li>
+                <strong>Trabajo en equipo sin caos:</strong>
+                Permite que varias personas trabajen en el mismo proyecto simultáneamente.
+            </li>
+
+            <li>
+                <strong>Copias de seguridad:</strong>
+                Cada miembro del equipo tiene una copia completa del proyecto y su historial.
+            </li>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Comando</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>git init</td>
+                    <td>Inicializa un repositorio Git creando la carpeta oculta .git.</td>
+                </tr>
+
+                <tr>
+                    <td>git config user.name</td>
+                    <td>Muestra el nombre de usuario configurado en Git.</td>
+                </tr>
+
+                <tr>
+                    <td>git config user.email</td>
+                    <td>Muestra el correo electrónico configurado en Git.</td>
+                </tr>
+
+                <tr>
+                    <td>git status</td>
+                    <td>Muestra el estado actual de los archivos del proyecto.</td>
+                </tr>
+
+                <tr>
+                    <td>git add .</td>
+                    <td>Agrega todos los cambios al área de preparación (staging).</td>
+                </tr>
+
+                <tr>
+                    <td>git commit -m "mensaje"</td>
+                    <td>Guarda los cambios con una descripción.</td>
+                </tr>
+                <tr>
+                    <td>git add .</td>
+                    <td>sirve para pasar los archivos a zona de modificacion o seleccionarlos. el punto nos permite seleccionar todos los archivos.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <section id="github">
+
+        <h1>GitHub</h1>
+
+        <p>
+            GitHub es una <strong>plataforma en la nube utilizada por desarrolladores para
+                almacenar código fuente y colaborar en proyectos de software</strong>.
+            Funciona como una red social para programadores y un sistema de control de versiones.
+        </p>
+
+        <h2>¿Qué hace exactamente?</h2>
+
+        <ul>
+            <li>
+                <strong>Aloja código en repositorios:</strong>
+                Funciona como un disco duro en internet para guardar proyectos.
+            </li>
+
+            <li>
+                <strong>Control de versiones:</strong>
+                Permite guardar distintas versiones del código y volver atrás si es necesario.
+            </li>
+
+            <li>
+                <strong>Trabajo colaborativo:</strong>
+                Facilita que varios desarrolladores trabajen juntos en un mismo proyecto.
+            </li>
+        </ul>
+
+    </section>
+
+    <script>
+
+        /* botones */
+        const btn_inicio = document.getElementById("btn_inicio");
+        const btn_git = document.getElementById("btn_git");
+        const btn_github = document.getElementById("btn_github");
+
+        /* secciones */
+        const seccion_inicio = document.getElementById("inicio");
+        const seccion_git = document.getElementById("git");
+        const seccion_github = document.getElementById("github");
+
+        /* botón inicio */
+        btn_inicio.addEventListener("click", function () {
+            seccion_inicio.style.display = "flex";
+            seccion_git.style.display = "none";
+            seccion_github.style.display = "none";
+        });
+
+        /* botón git */
+        btn_git.addEventListener("click", function () {
+            seccion_inicio.style.display = "none";
+            seccion_git.style.display = "block";
+            seccion_github.style.display = "none";
+        });
+
+        /* botón github */
+        btn_github.addEventListener("click", function () {
+            seccion_inicio.style.display = "none";
+            seccion_git.style.display = "none";
+            seccion_github.style.display = "block";
+        });
+
+    </script>
+
+</body>
+
+</html>
